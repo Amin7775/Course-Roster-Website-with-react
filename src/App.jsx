@@ -5,18 +5,42 @@ import Cart from "./Components/Cart/Cart";
 import Header from "./Components/Header/Header";
 
 function App() {
-  const [cartList,setCartList]= useState([]);
+  const [cartList, setCartList] = useState([]);
+  const [creditHour, setCreditHour] = useState(0);
+  const [totalPrice,setTotalPrice] = useState(0);
+  const [remaining,setRemaining] = useState(20);
 
-  const handleAddToCart = cart =>{
-    const isExist = cartList.find(item => item.course_name==cart.course_name)
-    if(isExist){
-      return alert("This Course Is Already Selected")
+  const handleAddToCart = (cart) => {
+    // Check Duplicate
+    const isExist = cartList.find(
+      (item) => item.course_name == cart.course_name
+    );
+    // Set Credit Hour
+    let creditHourCount = cart.credit;
+    // set Total Price
+    let priceCount=cart.price;
+
+    if (isExist) {
+      return alert("This Course Is Already Selected");
+    } else {
+      cartList.forEach((item) => {
+        creditHourCount = creditHourCount + item.credit;
+        priceCount=priceCount+item.price;
+      });
+      // check remaining hour
+      const totalRemaining = 20-creditHourCount;
+      if(creditHourCount>20){
+        return alert("Limit sesh")
+      }
+      setRemaining(totalRemaining)
+      setCreditHour(creditHourCount);
+      setTotalPrice(priceCount);
+      const newCartList = [...cartList, cart];
+      setCartList(newCartList);
+
+      console.log(creditHour);
     }
-
-    const newCartList = [...cartList,cart]
-    setCartList(newCartList);
-    console.log(cartList)
-  }
+  };
   return (
     <>
       {/* Body */}
@@ -28,7 +52,7 @@ function App() {
           </div>
 
           <div className="flex-1">
-            <Cart cartList={cartList}></Cart>
+            <Cart cartList={cartList} creditHour={creditHour} totalPrice={totalPrice} remaining={remaining}></Cart>
           </div>
         </div>
       </div>
