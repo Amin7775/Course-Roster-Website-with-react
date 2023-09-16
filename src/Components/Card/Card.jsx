@@ -6,7 +6,7 @@ const Card = ({ card,handleAddToCart }) => {
   const { course_name, image, details, price, credit } = card;
   return (
     <div>
-      <div className="border-2 bg-white w-full p-4 m-1 rounded-lg">
+      <div className="border-2 bg-white w-full p-4 lg:m-1 rounded-lg overflow-x-hidden">
         <img className="rounded-lg w-full h-44 mb-4" src={image} alt="" />
         <h2 className="text-lg font-semibold mb-3">{course_name}</h2>
         <p className="text-sm text-[#1C1B1B99] mb-4">{details}</p>

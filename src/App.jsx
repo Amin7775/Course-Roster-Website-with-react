@@ -51,12 +51,12 @@ function App() {
       {/* Body */}
       <div className="container mx-auto">
         <Header></Header>
-        <div className="grid grid-cols-4 gap-4">
-          <div className=" col-span-3">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-4">
+          <div className=" lg:col-span-3">
             <Cards handleAddToCart={handleAddToCart}></Cards>
           </div>
 
-          <div className="flex-1">
+          <div className="order-first lg:order-last p-5 lg:p-0 mx-auto lg:mx-0">
             <Cart cartList={cartList} creditHour={creditHour} totalPrice={totalPrice} remaining={remaining}></Cart>
           </div>
         </div>
