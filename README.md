@@ -1,14 +1,14 @@
-#Project Title - My Course Roster
+# Project Title - My Course Roster
 
 This is a React based web project where we get to chose different kind of courses and see them on the cart.
 This Project is mainly built with Html,Tailwind Css and React Js.
 
-#Some of the Features of the project:
+## Some of the Features of the project:
 - Responsiveness
 - Dynamic Card and Cart
 - Duplicate course selection verification
 
-#How I managed the state in this assignment project:
+## How I managed the state in this assignment project:
 
 There was mainly 2 parts to focus in this project. One is Card and another is Cart. 
 
