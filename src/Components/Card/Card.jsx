@@ -2,7 +2,7 @@ import { FiDollarSign } from "react-icons/fi";
 import { BsBook } from "react-icons/bs";
 import PropTypes from 'prop-types';
 
-const Card = ({ card }) => {
+const Card = ({ card,handleAddToCart }) => {
 //   console.log(card);
   const { course_name, image, details, price, credit } = card;
   return (
@@ -21,7 +21,7 @@ const Card = ({ card }) => {
             <p className="text-base font-medium text-[#1C1B1B99]">Credit : {credit}hr</p>
           </div>
         </div>
-        <button className="btn bg-[#2F80ED] text-white text-center w-full py-2 rounded-lg">Select</button>
+        <button onClick={()=> handleAddToCart(card)} className="btn bg-[#2F80ED] text-white text-center w-full py-2 rounded-lg">Select</button>
       </div>
     </div>
   );
@@ -29,7 +29,8 @@ const Card = ({ card }) => {
 
 Card.propTypes = {
     
-    card:PropTypes.object
+    card:PropTypes.object,
+    handleAddToCart:PropTypes.func
 }
 
 export default Card;
