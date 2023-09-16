@@ -4,6 +4,10 @@ import Cards from "./Components/Cards/Cards";
 import Cart from "./Components/Cart/Cart";
 import Header from "./Components/Header/Header";
 
+// toast
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   const [cartList, setCartList] = useState([]);
   const [creditHour, setCreditHour] = useState(0);
@@ -21,7 +25,7 @@ function App() {
     let priceCount=cart.price;
 
     if (isExist) {
-      return alert("This Course Is Already Selected");
+      return toast("This Course Is Already Selected");
     } else {
       cartList.forEach((item) => {
         creditHourCount = creditHourCount + item.credit;
@@ -30,7 +34,7 @@ function App() {
       // check remaining hour
       const totalRemaining = 20-creditHourCount;
       if(creditHourCount>20){
-        return alert("Limit sesh")
+        return toast("You can not select more than 20 credits at a time")
       }
       setRemaining(totalRemaining)
       setCreditHour(creditHourCount);
@@ -38,8 +42,9 @@ function App() {
       const newCartList = [...cartList, cart];
       setCartList(newCartList);
 
-      console.log(creditHour);
+   
     }
+    <ToastContainer />
   };
   return (
     <>
@@ -56,6 +61,7 @@ function App() {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 }

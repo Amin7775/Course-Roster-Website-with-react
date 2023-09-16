@@ -3,7 +3,6 @@ import { BsBook } from "react-icons/bs";
 import PropTypes from 'prop-types';
 
 const Card = ({ card,handleAddToCart }) => {
-//   console.log(card);
   const { course_name, image, details, price, credit } = card;
   return (
     <div>

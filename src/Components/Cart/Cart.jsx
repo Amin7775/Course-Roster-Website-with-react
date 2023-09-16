@@ -1,7 +1,6 @@
-
+import PropTypes from 'prop-types';
 
 const Cart = ({cartList,creditHour,totalPrice,remaining}) => {
-
     return (
         <div className="w-full border-2 bg-white h-auto p-4 m-1 rounded-lg">
             <div className="border-b-2 pb-4">
@@ -23,5 +22,11 @@ const Cart = ({cartList,creditHour,totalPrice,remaining}) => {
         </div>
     );
 };
+Cart.propTypes = {
+    cartList:PropTypes.array,
+    creditHour:PropTypes.number,
+    totalPrice:PropTypes.number,
+    remaining:PropTypes.number
+}
 
 export default Cart;

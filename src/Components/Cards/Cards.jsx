@@ -12,10 +12,10 @@ const Cards = ({handleAddToCart}) => {
       .then((data) => setCards(data));
   }, []);
 
-//   console.log(cards);
+
   return (
     <>
-    <div className="">
+    <div className="mb-10">
         <div className="grid grid-cols-3 gap-4">
         {
             cards.map((card,idx) => <Card key={idx} card={card} handleAddToCart={handleAddToCart}></Card>)
