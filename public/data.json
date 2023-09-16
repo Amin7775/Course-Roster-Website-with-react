@@ -18,7 +18,7 @@
       "course_name": "Introduction to C++ for DSA",
       "credit": 10,
       "price": 10000,
-      "details": "Learn C++ programming and data structures for competitive programming and data structure and algorithms (DSA) preparation."
+      "details": "Learn C++ programming and data structures for competitive programming and data structure and algorithms (DSA) preparation and have a solid foundation."
     },
     {
       "image": "https://i.ibb.co/MnMMWG2/4.jpg",
@@ -39,7 +39,7 @@
       "course_name": "Software Engineering",
       "credit": 2,
       "price": 23000,
-      "details": "Master the principles of software engineering, including software development methodologies, design patterns, and project management."
+      "details": "Master the principles of software engineering, including software development methodologies, design patterns,architecture and project management."
     },
     {
       "image": "https://i.ibb.co/61B4d1N/7.jpg",

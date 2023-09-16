@@ -1,8 +1,9 @@
 import { FiDollarSign } from "react-icons/fi";
 import { BsBook } from "react-icons/bs";
+import PropTypes from 'prop-types';
 
 const Card = ({ card }) => {
-  console.log(card);
+//   console.log(card);
   const { course_name, image, details, price, credit } = card;
   return (
     <div>
@@ -17,7 +18,7 @@ const Card = ({ card }) => {
           </div>
           <div className="flex items-center gap-3">
             <BsBook  className="text-lg"></BsBook>
-            <p className="text-base font-medium text-[#1C1B1B99]">Credit : {credit}</p>
+            <p className="text-base font-medium text-[#1C1B1B99]">Credit : {credit}hr</p>
           </div>
         </div>
         <button className="btn bg-[#2F80ED] text-white text-center w-full py-2 rounded-lg">Select</button>
@@ -25,5 +26,10 @@ const Card = ({ card }) => {
     </div>
   );
 };
+
+Card.propTypes = {
+    
+    card:PropTypes.object
+}
 
 export default Card;
